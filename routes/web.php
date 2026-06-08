@@ -19,3 +19,20 @@ Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
 
+Route::get('/boards', 'BoardController@index');
+
+Route::get('/boards/create', 'BoardController@create');
+
+Route::post('/boards', 'BoardController@store');
+
+Route::get('/boards/{board}', 'BoardController@show');
+
+Route::post(
+    '/boards/{board}/lists',
+    'BoardListController@store'
+);
+
+Route::post(
+    '/lists/{list}/cards',
+    'CardController@store'
+);

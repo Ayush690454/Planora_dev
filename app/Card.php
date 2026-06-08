@@ -1,0 +1,20 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Card extends Model
+{
+    protected $fillable = [
+        'board_list_id',
+        'title',
+        'description',
+        'position'
+    ];
+
+    public function list()
+    {
+        return $this->belongsTo(BoardList::class);
+    }
+}
